@@ -2869,6 +2869,7 @@ const AdminDashboardInner: React.FC<Props> = ({ onNavigate, settings, onUpdateSe
                   <DashboardCard icon={LogOut} label="Exit" onClick={() => onNavigate('STUDENT_DASHBOARD')} color="slate" />
               </div>
           </div>
+    
       )}
 
 
