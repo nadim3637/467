@@ -25,7 +25,7 @@ export default async function handler(req: Request) {
     // Validate model on server side as well
     let modelToUse = model;
     if (!modelToUse || modelToUse.includes("gemini")) {
-        modelToUse = "llama3-8b-8192";
+        modelToUse = "llama-3.1-8b-instant";
     }
 
     // 1. Determine API Key
@@ -50,10 +50,10 @@ export default async function handler(req: Request) {
 
     // 2. Call Groq
     const payload: any = {
-      model: modelToUse || "llama3-8b-8192",
+      model: modelToUse || "llama-3.1-8b-instant",
       messages,
       temperature: 0.7,
-      max_tokens: 4096,
+      max_tokens: 128000,
       stream: !!stream
     };
 
